@@ -1,5 +1,9 @@
 ﻿// Напишите программу, которая выводит случайное трёхзначное число и удаляет вторую цифру этого числа.
 
-int number = new Random().Next(100,1000);
-int new_numb = int.Parse(number.ToString().Remove(1, 1));
-Console.WriteLine($"Введенное значение {number} после удаления второго значение {new_numb}");
+int value = new Random().Next(100, 1000);
+int  newValue = 0;
+
+newValue = value / 100 * 10 + value % 10;
+
+System.Console.WriteLine($"Заданное значечение {value} преобразуется в {newValue}");
+
