@@ -10,11 +10,23 @@ int Prompt(string message)
 }
 
 int value = Prompt("Введите число: ");
-string valueText = Convert.ToString(value);
-if (valueText.Length > 2)
-{
-  System.Console.WriteLine($"Введенное число {value}, его третья цифра равна {valueText[2]}");
-}
-else {
-  Console.WriteLine($"Введенное число {value} не имеет третьей цифры");
-}
+if ((value <= 99))
+  {
+    Console.WriteLine($"Введенное число {value} не имеет третьей цифры");
+  }
+if ((value < 1000) && (value >= 100))
+  {
+    System.Console.WriteLine($"Введенное число {value}, его третья цифра равна {value % 10}");  
+  }
+if ((value < 10000) && (value >= 1000))
+  {
+    System.Console.WriteLine($"Введенное число {value}, его третья цифра равна {(value / 10) % 10}");
+  }
+if ((value < 100000) && (value >= 10000))
+  {
+    System.Console.WriteLine($"Введенное число {value}, его третья цифра равна {(value / 100) % 10}");
+  }
+if ((value < 1000000) && (value >= 100000))
+  {
+    System.Console.WriteLine($"Введенное число {value}, его третья цифра равна {(value / 1000) % 10}");
+  }
