@@ -1,4 +1,5 @@
-﻿// Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
+﻿// Напишите программу, которая выводит массив из 8 элементов, заполненный случайными числами. 
+//Оформите заполнение массива и вывод в виде функции 
 // 1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
 // 6, 1, 33 -> [6, 1, 33]
 
@@ -13,7 +14,7 @@ int[] CreateArray(int length)
     int[] array = new int[length];
     for (int i = 0; i < array.Length; i++)
     {
-        array[i] =new Random().Next(0, 100);
+        array[i] =new Random().Next(1, 100);
     }
     return array;
 }
@@ -22,7 +23,7 @@ void PrintArray(int[] array)
 {
     for (int i = 0; i < array.Length; i++)
     {
-        System.Console.Write($"{array[i]}\t");
+        System.Console.Write($"{array[i]} ");
     }
     System.Console.WriteLine();
 }
