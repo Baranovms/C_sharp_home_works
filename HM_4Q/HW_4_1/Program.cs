@@ -10,6 +10,11 @@ double Promt(string message)
 //System.Console.WriteLine($"Число {number} возвели в степень {degree}: {Math.Pow(number, degree)}"); //самое простое решение
 
 
+
+double number = Promt("Введите возводимое число: ");
+double degree = Promt("Введите степень: ");
+System.Console.WriteLine($"Число {number} возвели в степень {degree}: {stepen(number)}");
+
 double stepen(double number)
 {
     double newNumber = 1;
@@ -19,7 +24,3 @@ double stepen(double number)
     }
     return newNumber;
 }
-
-double number = Promt("Введите возводимое число: ");
-double degree = Promt("Введите степень: ");
-System.Console.WriteLine($"Число {number} возвели в степень {degree}: {stepen(number)}");
