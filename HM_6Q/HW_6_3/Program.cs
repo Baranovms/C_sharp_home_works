@@ -64,8 +64,31 @@ int SumRow(int[,] arr)
     return sumRow;
 }
 
+int SumCol(int[,] arr)
+{
+    int j = 0;
+    int Min = 1000;
+    int sumCol = 0;
+    while (j < col)
+    {
+        for (int i = 0; i < row; i++)
+        {
+            if (arr[i, j] < Min)
+            {
+                Min = arr[i, j];
+            }
+        }
+        sumCol += Min;
+        Min = 1000;
+        j++;
+    }
+    return sumCol;
+}
+
 
 
 int[,] arr = GetTable(row, col, min, max);
 PrintTable(arr);
 System.Console.WriteLine($"Построчная сумма максимальных значений: {SumRow(arr)}");
+System.Console.WriteLine($"Поколоночная сумма минимальных значений: {SumCol(arr)}");
+System.Console.WriteLine($"Разность максимальных и минимальных значений: {SumRow(arr) - SumCol(arr)}");
