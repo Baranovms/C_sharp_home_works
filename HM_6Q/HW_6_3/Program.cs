@@ -9,15 +9,6 @@ int col = 3;
 int min = 1;
 int max = 10;
 
-void PrintArray(int[] array)
-{
-    for (int i = 0; i < array.Length; i++)
-    {
-        System.Console.Write(array[i] + ", ");
-    }
-    System.Console.WriteLine();
-}
-
 int[,] GetTable(int row, int col, int min, int max)
 {
     int[,] table = new int[row, col];
