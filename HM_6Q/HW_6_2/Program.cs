@@ -14,11 +14,17 @@ double Prompt(string message)
     throw new Exception("Вы ввели не число");
 }
 
+double[] PointOfIntersection(double b1, double k1, double b2, double k2)
+{
+    double[] coord = new double[2];
+    coord[0] = (b2 - b1) / (k1 - k2);
+    coord[1] = k1 * coord[0] + b1;
+    return coord;
+}
+
 double b1 = Prompt("Введите значение аргумента b для 1 уравнения:");
 double k1 = Prompt("Введите значение аргумента k для 1 уравнения:");
 double b2 = Prompt("Введите значение аргумента b для 2 уравнения:");
 double k2 = Prompt("Введите значение аргумента k для 2 уравнения:");
-
-double x = (b2 - b1)/(k1 - k2);
-double y = k1 * x + b1;
-Console.WriteLine($"Точка пересечения прямых y={k1}*x + {b1} и y={k2}*x + {b2} имеет координаты ({x}, {y})");
+double[] answer = PointOfIntersection(b1, k1, b2, k2);
+Console.WriteLine($"Точка пересечения прямых y={k1}*x + {b1} и y={k2}*x + {b2} имеет координаты ({answer[0]}, {answer[1]})");
